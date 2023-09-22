@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Deret Fibonacci</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        #container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid #000;
+            padding: 10px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        input[type="number"] {
+            width: 60px;
+        }
+
+        button {
+            padding: 5px 10px;
+            background-color: #0074d9;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <h1>Deret Fibonacci</h1>
+        <h4>chiki dwi putri.com</h4>
+
+        <label for="count">Jumlah Angka:</label>
+        <input type="number" id="count" min="1" value="1">
+        <button onclick="generateFibonacci()">Hitung</button>
+
+        <h2>Hasil:</h2>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function generateFibonacci() {
+            const count = parseInt(document.getElementById('count').value);
+            const resultDiv = document.getElementById('result');
+
+            if (isNaN(count) || count <= 0) {
+                resultDiv.innerHTML = 'Masukkan jumlah angka yang valid.';
+                return;
+            }
+
+            let fibonacci = [0, 1];
+
+            for (let i = 2; i < count; i++) {
+                const nextNumber = fibonacci[i - 1] + fibonacci[i - 2];
+                fibonacci.push(nextNumber);
+            }
+
+            let tableHTML = '<table>';
+            tableHTML += '<tr><th>Indeks</th><th>Angka Fibonacci</th></tr>';
+
+            for (let i = 0; i < count; i++) {
+                tableHTML += `<tr><td>${i}</td><td>${fibonacci[i]}</td></tr>`;
+            }
+
+            tableHTML += '</table>';
+
+            resultDiv.innerHTML = tableHTML;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>chikidwiputricom</title>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        h2,
+        h4 {
+            margin: 0;
+        }
+
+        p#demo {
+            font-weight: bold;
+        }
+
+        p#demokubus {
+            font-weight: bold;
+        }
+
+        p#pdemo {
+            font-weight: bold;
+        }
+
+        input {
+            width: 75px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Program Menghitung Volume Balok</h2>
+    <h4>chiki dwi putri sibarani.com</h4>
+    <br>
+    <!-- Penginputan Panjang, Lebar, Tinggi -->
+    <label for="panjang">Panjang</label>
+    <input type="number" id="panjang" name="variabel">
+    <label for="lebar">Lebar</label>
+    <input type="number" id="lebar" name="variabel">
+    <label for="tinggi">Tinggi</label>
+    <input type="number" id="tinggi" name="variabel">
+    <button onclick="myFunction()">Hitung</button>
+    <p id="demo"></p>
+
+    <!--volume kubus  -->
+
+
+    <h2>Program Menghitung Volume Kubus</h2>
+    <h4>chiki dwi putri sibarani.com</h4>
+    <br>
+    <!-- Sisi -->
+    <label for="sisi">Sisi</label>
+    <input type="number" id="sisi" name="variabel">
+    <button onclick="kubus()">Hitung</button>
+    <p id="demokubus"></p>
+
+
+    <!-- volume tabung -->
+
+
+    <h2>Program Menghitung Volume Tabung</h2>
+    <h4>chiki dwi putri sibarani.com</h4>
+    <br>
+    <!-- Penginputan Pi, Jari-jari , Tinggi -->
+    <label for="Jari-jari">Jari-jari</label>
+    <input type="number" id="r" name="variabel">
+    <label for="tinggi">Tinggi</label>
+    <input type="number" id="t" name="variabel">
+    <button onclick="tabung()">Hitung</button>
+    <p id="pdemo"></p>
+
+    <script>
+        //Penghitungan Volume balok
+        function myFunction() {
+            var panjang = document.getElementById("panjang").value
+            var lebar = document.getElementById("lebar").value
+            var tinggi = document.getElementById("tinggi").value
+            var volume = panjang * lebar * tinggi
+            document.getElementById("demo").innerText = "Volume Balok = " + volume + " cm^3"
+        }
+
+        //Penghitungan Volume kubus
+        function kubus() {
+            var sisi = document.getElementById("sisi").value
+            var volume = sisi * sisi * sisi
+            document.getElementById("demokubus").innerText = "Volume Kubus = " + volume + " cm^3"
+        }
+
+        //      //Penghitungan Volume tabung
+
+        function tabung() {
+            var r = document.getElementById("r").value
+            var tinggi = document.getElementById("t").value
+            var pi = 3.14
+            var volume = pi * (r * r) * tinggi
+            document.getElementById("pdemo").innerText = "Volume Tabung = " + volume + " cm^3"
+        }
+    </script>
+
+
+</body>
+
+</html>
